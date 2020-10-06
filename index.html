@@ -10,19 +10,21 @@
 <body>
     <header>
         <!-- Title -->
-        <input type="text" name="title" id="input-title" class="title" placeholder="Untitled document">
+        <input type="text" name="title" id="input-title" class="title" placeholder="Untitled document" autocomplete="off" autocapitalize="off">
         <!-- Navigation -->
         <ul class="nav">
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="File" class="dropdown"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="Edit" class="dropdown"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="View" class="dropdown"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="Insert" class="dropdown"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="Format" class="dropdown"></li>
+            <li class="nav-section"><input type="button" class="nav-button" value="Tools" class="dropdown"></li>
         </ul>
     </header>
-    <main>
-        
+    <main class="center">
+        <div class="page" id="page">
+            <textarea name="file" id="page-content" cols="30" rows="10" class="pagecontent" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+        </div>
     </main>
 </body>
 </html>
