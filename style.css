@@ -62,11 +62,14 @@ main {
     margin-right: auto;
     box-shadow: 1px 1px 5px gray;
     outline: none;
+    white-space: normal;
 }
 
+/* GET MR. PECK's HELP */
+
 div {
-    white-space: normal;
-    line-break: break-word;
+    line-break: strict;
+    word-break: break-word;
 }
 
 .image-button {
@@ -74,36 +77,13 @@ div {
     height: 16px;
 }
 
-.center {
-    margin: auto;
+img {
     width: 100%;
 }
 
-.nav {
-    list-style: none;
-    margin-left: 20px;
-    padding-left: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.nav-section {
-    display: inline;
-}
-
-.nav-button {
-    border: none;
-    background: none;
-    outline: none;
-    border-radius: 2px;
-}
-
-.nav-button:hover {
-    background: lightgray;
-}
-
-.nav-button:focus {
-    background: #4285F4;
+.center {
+    margin: auto;
+    width: 100%;
 }
 
 .tool-button {
@@ -159,20 +139,54 @@ div {
     min-height:200px;
 }
 
-.sample-toolbar
-{
-    border:solid 1px #ddd;
-    background:#f4f4f4;
-    padding: 5px;
-    border-radius:3px;
+.nav {
+    list-style: none;
+    margin-left: 20px;
+    padding-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.sample-toolbar > span
-{
-    cursor:pointer;
+.nav-section {
+    display: inline;
 }
 
-.sample-toolbar > span:hover
-{
-    text-decoration:underline;
+.nav-button {
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+.dropdown-child {
+    background-color: white;
+    min-width: 200px;
+    max-width: 400px;
+    position: absolute;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 5px;
+}
+
+.dropdown-child a {
+    background-color: white;
+    padding: 10px;
+    font-size: 14px;
+    padding-left: 18px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-child a:hover {
+    background-color: lightgrey;
+}
+
+.nav-button {
+    background: none;
+}
+
+.nav-button:hover {
+    background: lightgray;
+}
+
+.nav-button:focus {
+    background: #75aaff5b;
 }

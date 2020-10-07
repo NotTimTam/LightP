@@ -14,14 +14,15 @@
         <!-- Navigation -->
         <div class="nav-top">
             <ul class="nav">
-                <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Edit"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="View"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Insert"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Format"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Tools"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="File" onclick="changeDrop('file-drop', true)" onblur="changeDrop('file-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Edit" onclick="changeDrop('edit-drop', true)" onblur="changeDrop('edit-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="View" onclick="changeDrop('view-drop', true)" onblur="changeDrop('view-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Insert" onclick="changeDrop('insert-drop', true)" onblur="changeDrop('insert-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Format" onclick="changeDrop('format-drop', true)" onblur="changeDrop('format-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Tools" onclick="changeDrop('tool-drop', true)" onblur="changeDrop('tool-drop', false)"></li>
             </ul>
         </div>
+
         <!-- Tools -->
         <div class="nav-bottom">
             <ul class="nav">
@@ -39,25 +40,74 @@
                 <!-- Extra -->
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="setUrl()" src="images/link.png" title="Turn text into a link" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="insertImage(prompt('URL'))" src="images/img.png" title="Insert an image" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
+                <!-- Page -->
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyLeft')" src="images/left.png" title="Align text left" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyCenter')" src="images/center.png" title="Align text center" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyRight')" src="images/right.png" title="Align text right" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyFull')" src="images/justify.png" title="Justify text" style="font-weight: bolder; border-right: 1px lightgray solid; width: 14px; height: 14px; padding: 11px;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="alert('Not implemented')" src="images/spacing.png" title="Change line height" style="font-weight: bolder; border-right: 1px lightgray solid; width: 14px; height: 14px; padding: 11px;"></li>
                 <!-- Document -->
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('insertorderedlist')" src="images/order.png" title="Create an ordered list" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('insertunorderedlist')" src="images/unorder.png" title="Create an unordered list" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('indent')" src="images/indent_right.png" title="Indent a tab left" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('outdent')" src="images/indent_left.png" title="Indent a tab right" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
             </ul>
         </div>
     </header>
     
     <p style="height: 80px;"></p>
     <main class="center">
+        <!-- Dropdowns -->
+        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
+        <div class="dropdown-child" id="edit-drop" style="display: none; margin-left: 58px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
+        <div class="dropdown-child" id="view-drop" style="display: none; margin-left: 97px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
+        <div class="dropdown-child" id="insert-drop" style="display: none; margin-left: 142px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
+        <div class="dropdown-child" id="format-drop" style="display: none; margin-left: 192px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
+        <div class="dropdown-child" id="tool-drop" style="display: none; margin-left: 252px; margin-top: -54px;">
+            <a>Sub Menu 1</a>
+            <a>Sub Menu 2</a>
+            <a>Sub Menu 3</a>
+            <a>Sub Menu 4</a>
+            <a>Sub Menu 5</a>
+        </div>
+
         <div class="page" id="page" contenteditable></div>
     </main>
-    
-    <!-- Dropdown Menus -->
-    <div id="file" class="dropdown">
-        <ul class="dropdown-nav" id="file-nav" style="display:none;">
-            <li class="dropdown-nav-section">New</li>
-            <li class="dropdown-nav-section">Open</li>
-            <li class="dropdown-nav-section">Save</li>
-        </ul>
-    </div>
 </body>
 
 <script src="scripts/main.js"></script>

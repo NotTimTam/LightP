@@ -53,3 +53,12 @@ function changeBGColor() {
     format("backColor", color);
     color = document.getElementById("bcp-t").style.backgroundColor = color;
 }
+
+// Dropdowns
+function changeDrop(id, yes=true) {
+    if (yes == true) {
+        document.getElementById(id).style.display = "block";
+    } else {
+        document.getElementById(id).style.display = "none";
+    }
+}
