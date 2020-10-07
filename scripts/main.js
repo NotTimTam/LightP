@@ -62,3 +62,12 @@ function changeDrop(id, yes=true) {
         document.getElementById(id).style.display = "none";
     }
 }
+
+// Make a new file
+function newFile() {
+    console.log("Creating a new file...");
+    changeTitle("Unnamed Document");
+    document.getElementById("page").innerHTML = "";
+    document.getElementById("page").style = "";
+    document.getElementById("page").focus;
+}
