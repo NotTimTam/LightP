@@ -67,6 +67,11 @@ div {
     white-space: normal;
 }
 
+.image-button {
+    width: 16px;
+    height: 16px;
+}
+
 .center {
     margin: auto;
     width: 100%;
