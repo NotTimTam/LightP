@@ -1,9 +1,9 @@
 // Change title.
 function changeTitle(value) {
     if (value != "") {
-        document.title = `${value} - Process`
+        document.title = `${value} - LightP`
     } else {
-        document.title = `Untitled Document - Process`
+        document.title = `Untitled Document - LightP`
         document.getElementById("input-title").value = "Untitled Document";
     }
     // IMPLEMENT DOCUMENT SAVE CHANGE TITLE.
