@@ -17,13 +17,13 @@ function saveSelection() {
 
 // Change font.
 function changeFont(size, text) {
-    let spans = document.getElementsByTagName("span")
+    let spans = document.getElementsByTagName("span");
     let alreadyExists = false;
-    let spanToChange = null;
     for(var i = 0; i < spans.length; i++) {
         if(spans[i].innerHTML == text) {
             alreadyExists = true;
-            spans[i].style = `font-size: ${size};`
+            console.log(`${spans[i]} already exists, changing the values.`);
+            spans[i].style.fontSize = (size + "px");
         }
     }
 
@@ -32,6 +32,29 @@ function changeFont(size, text) {
     }
 
     console.log(`Changed the font size of "${text}" to ${size}px.`);
+    // let range = document.getElementById("page").createRange();
+    // range.moveToElementText(localStorage.getItem("last-selection"));
+    // range.select();
+}
+
+// Get font of area.
+function getFontSize(selection) {
+    if(getSelectionText() != "") {
+        let spans = document.getElementsByTagName("span");
+        let alreadyExists = false;
+        for(var i = 0; i < spans.length; i++) {
+            if(spans[i].innerHTML == selection) {
+                alreadyExists = true;
+                console.log(`${spans[i]} exists, getting the value.`);
+                document.getElementById("font").value = (spans[i].style.fontSize).replace('px', '');
+            }
+        }
+
+        if(!alreadyExists) {
+            console.log(`That area isn't configured so it's size must be 16px.`);
+            document.getElementById("font").value = 16;
+        }
+    }
 }
 
 // Make text bold.
