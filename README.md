@@ -1,5 +1,5 @@
-# process
-A word processor for the web.
+# Lightweight Processor
+Is a lightweight word processor for the web.
 
 To do:
 - Finish adding document editing features.
