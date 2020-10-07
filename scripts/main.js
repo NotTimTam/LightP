@@ -63,8 +63,19 @@ function changeDrop(id, yes=true) {
     }
 }
 
+// Hide savedialogue.
+function closeSave() {
+    document.getElementById("savedialogue").style.display = "none";
+}
+
+// Show savedialogue.
+function openSave() {
+    document.getElementById("savedialogue").style.display = "block";
+}
+
 // Make a new file
 function newFile() {
+    closeSave();
     console.log("Creating a new file...");
     changeTitle("Unnamed Document");
     document.getElementById("page").innerHTML = "";

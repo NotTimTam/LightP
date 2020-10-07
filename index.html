@@ -14,7 +14,7 @@
         <!-- Navigation -->
         <div class="nav-top">
             <ul class="nav">
-                <li class="nav-section"><input type="button" class="nav-button" value="File" onclick="changeDrop('file-drop', true)" onblur="changeDrop('file-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="File" onclick="changeDrop('file-drop', true)"></li>
                 <li class="nav-section"><input type="button" class="nav-button" value="Edit" onclick="changeDrop('edit-drop', true)" onblur="changeDrop('edit-drop', false)"></li>
                 <li class="nav-section"><input type="button" class="nav-button" value="View" onclick="changeDrop('view-drop', true)" onblur="changeDrop('view-drop', false)"></li>
                 <li class="nav-section"><input type="button" class="nav-button" value="Insert" onclick="changeDrop('insert-drop', true)" onblur="changeDrop('insert-drop', false)"></li>
@@ -58,9 +58,9 @@
     <p style="height: 80px;"></p>
     <main class="center">
         <!-- Dropdowns -->
-        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;">
+        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;" onblur="changeDrop('file-drop', false)">
             <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="newFile()"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openSave()"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Open" onclick=""></li>
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="Email" onclick=""></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick=""></li>
@@ -87,6 +87,13 @@
 
         <div class="dropdown-child" id="tool-drop" style="display: none; margin-left: 252px; margin-top: -54px;">
             <ul class="dropdown-list"></ul>
+        </div>
+
+        <div class="savedialogue" id="savedialogue" style="display: none;" onblur="closeSave()">
+            <input type="button" class="close-button" value="X" onclick="closeSave()">
+            <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
+            <br><br><br>
+            <input type="button" class="nav-button" style="width: 50px; height: 30px;" value="YES"> <input type="button" class="nav-button" style="width: 50px; height: 30px;" value="NO" onclick="newFile()">
         </div>
 
         <div class="page" id="page" contenteditable></div>

@@ -170,6 +170,18 @@ img {
     background: #75aaff5b;
 }
 
+.savedialogue {
+    background-color: white;
+    text-align: center;
+    margin-left: calc((100vw / 2) - 300px);
+    margin-top: calc((100vh / 2) - 300px);
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 5px;
+}
+
 .dropdown-child {
     background-color: white;
     min-width: 200px;
@@ -219,5 +231,23 @@ img {
 }
 
 .dropdown-button:focus {
+    background: #75aaff5b;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    float: right;
+}
+
+.close-button:hover {
+    background: lightgray;
+}
+
+.close-button:focus {
     background: #75aaff5b;
 }
