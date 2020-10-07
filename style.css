@@ -118,7 +118,7 @@ div {
     background: lightgray;
 }
 
-.tool-button:focus {
+.tool-button:active {
     background: #4285F4;
 }
 
