@@ -57,12 +57,12 @@
     
     <p style="height: 80px;"></p>
 
-    <div class="savedialogue" id="savedialogue" style="display: none;" onblur="closeSave()" tabindex="0">
+    <div class="savedialogue" id="savedialogue" style="display: none;">
         <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeSave()">
         <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
         <hr style="width: 98%">
         <br><br><br>
-        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile()">
+        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES" onclick="saveFile()"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile()">
     </div>
 
     <main class="center">

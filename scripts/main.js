@@ -92,3 +92,24 @@ function newFile() {
     changeTitle("Unnamed Document");
     document.getElementById("page").innerHTML = "";
 }
+
+// Save current file.
+function saveFile() {
+    console.log("Downloading user data.");
+    download(`${document.getElementById("input-title").innerHTML}.lpd`, document.getElementById("input-title").innerHTML);
+    console.log("Downloaded user data.");
+}
+
+// Download files.
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
