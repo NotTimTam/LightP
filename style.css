@@ -63,6 +63,10 @@ main {
     outline: none;
 }
 
+div {
+    white-space: normal;
+}
+
 .center {
     margin: auto;
     width: 100%;
