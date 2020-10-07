@@ -71,6 +71,7 @@ function closeSave() {
 // Show savedialogue.
 function openSave() {
     document.getElementById("savedialogue").style.display = "block";
+    document.getElementById("savedialogue").focus();
     hideTabs();
 }
 

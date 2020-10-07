@@ -181,6 +181,7 @@ img {
     box-shadow: 1px 1px 5px gray;
     border-radius: 5px;
     font-family: sans-serif;
+    outline: none;
 }
 
 .dropdown-child {
