@@ -55,6 +55,7 @@ main {
     background-color: white;
     height: max-content;
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 630px;
     padding: 1in;
     margin-left: auto;
@@ -65,6 +66,7 @@ main {
 
 div {
     white-space: normal;
+    line-break: break-word;
 }
 
 .image-button {
