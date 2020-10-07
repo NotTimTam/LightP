@@ -3,26 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process</title>
+    <title>Unnamed Document - Process</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <!-- Title -->
-        <input type="text" name="title" id="input-title" class="title" placeholder="Untitled document" autocomplete="off" autocapitalize="off">
+        <input type="text" minlength="1" name="title" value="Unnamed Document" id="input-title" class="title" placeholder="Untitled document" autocomplete="off" autocapitalize="off" onchange="changeTitle(this.value)">
         <!-- Navigation -->
-        <ul class="nav">
-            <li class="nav-section"><input type="button" class="nav-button" value="File" class="dropdown"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="Edit" class="dropdown"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="View" class="dropdown"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="Insert" class="dropdown"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="Format" class="dropdown"></li>
-            <li class="nav-section"><input type="button" class="nav-button" value="Tools" class="dropdown"></li>
-        </ul>
+        <div class="nav-top">
+            <ul class="nav">
+                <li class="nav-section"><input type="button" class="nav-button" value="File"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Edit"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="View"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Insert"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Format"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Tools"></li>
+            </ul>
+        </div>
+        <!-- Tools -->
+        <div class="nav-bottom">
+            <ul class="nav">
+                <li class="nav-section"><input id="zoom" title="Page Zoom" type="number" class="nav-fill" value="100"></li>
+                <li class="nav-section"><input id="font" title="Font Size (px)" type="number" class="nav-fill" value="11" onchange="changeFont(document.getElementById('font').value, localStorage.getItem('last-selection'))"></li>
+            </ul>
+        </div>
     </header>
+    <p style="height: 66px;">BLOCKER</p>
     <main class="center">
-        <div class="page" id="page" contenteditable=""></div>
+        <div class="page" id="page" contenteditable onfocusout="saveSelection()"></div>
     </main>
+    
+    <!-- Dropdown Menus -->
+    <div id="file" class="dropdown">
+        <ul class="dropdown-nav" id="file-nav" style="display:none;">
+            <li class="dropdown-nav-section">New</li>
+            <li class="dropdown-nav-section">Open</li>
+            <li class="dropdown-nav-section">Save</li>
+        </ul>
+    </div>
 </body>
+
+<script src="scripts/main.js"></script>
+
 </html>

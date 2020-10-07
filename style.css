@@ -12,24 +12,29 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 64px;
+    height: 97px;
+}
+
+.nav-top {
+    border-bottom: 1px lightgray solid;
+}
+
+.nav-bottom {
     border-bottom: 1px lightgray solid;
 }
 
 main {
-    margin-top: 64px;
-    padding-top: 10px;
-    height: 100vh;
-    max-height: 100vh;
+    margin-top: 97px;
+    height: calc(100vh - 97px);
+    max-height: calc(100vh - 97px);
     overflow: scroll;
 }
 
 .page {
     background-color: white;
-    margin-top: 80px;
     height: max-content;
-    margin-bottom: 10px;
-    width: 50%;
+    margin-top: 20px;
+    width: 630px;
     padding: 1in;
     margin-left: auto;
     margin-right: auto;
@@ -47,6 +52,7 @@ main {
     margin-left: 20px;
     padding-left: 0px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .nav-section {
@@ -65,7 +71,7 @@ main {
 }
 
 .nav-button:focus {
-    background: lightblue;
+    background: #4285F4;
 }
 
 .title {
