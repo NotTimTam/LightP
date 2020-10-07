@@ -12,7 +12,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 97px;
+    height: 110px;
 }
 
 .nav-top {
@@ -24,21 +24,42 @@ header {
 }
 
 main {
-    margin-top: 97px;
-    height: calc(100vh - 97px);
-    max-height: calc(100vh - 97px);
+    margin-top: 110px;
+    height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px);
     overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: none;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray; 
 }
 
 .page {
     background-color: white;
     height: max-content;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 630px;
     padding: 1in;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 1px 1px gray;
+    box-shadow: 1px 1px 5px gray;
     outline: none;
 }
 
@@ -74,6 +95,30 @@ main {
     background: #4285F4;
 }
 
+.tool-button {
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.tool-button:hover {
+    background: lightgray;
+}
+
+.tool-button:focus {
+    background: #4285F4;
+}
+
+.emoji-tool-button {
+    font-size: 12px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
 .title {
     outline: none;
     background: none;
@@ -94,4 +139,29 @@ main {
 .title:focus {
     border: 2px #4285F4 solid;
     margin-bottom: -2px;
+}
+
+.editor
+{
+    border:solid 1px #ccc;
+    padding: 20px;
+    min-height:200px;
+}
+
+.sample-toolbar
+{
+    border:solid 1px #ddd;
+    background:#f4f4f4;
+    padding: 5px;
+    border-radius:3px;
+}
+
+.sample-toolbar > span
+{
+    cursor:pointer;
+}
+
+.sample-toolbar > span:hover
+{
+    text-decoration:underline;
 }

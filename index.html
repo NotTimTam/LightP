@@ -25,14 +25,20 @@
         <!-- Tools -->
         <div class="nav-bottom">
             <ul class="nav">
-                <li class="nav-section"><input id="zoom" title="Page Zoom" type="number" class="nav-fill" value="100"></li>
-                <li class="nav-section"><input id="font" title="Font Size (px)" type="number" class="nav-fill" value="11" onchange="changeFont(document.getElementById('font').value, localStorage.getItem('last-selection'))"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('undo')" value="⬅" title="Undo" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('redo')" value="➡" title="Redo" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('redo')" value="🖨️" title="Print" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('bold')" value="B" title="Make text bold" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('italic')" value="I" title="Italicize text" style="font-weight: bolder; font-style: italic;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('insertunorderedlist')" value="•" title="Create an unordered list" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button emoji-tool-button" onclick="setUrl()" value="🔗" title="Turn text into a link" style="font-weight: bolder;"></li>
             </ul>
         </div>
     </header>
-    <p style="height: 66px;"></p>
-    <main class="center" onmouseup="getFontSize(getSelectionText())">
-        <div class="page" id="page" contenteditable onfocusout="saveSelection()"></div>
+    
+    <p style="height: 80px;"></p>
+    <main class="center">
+        <div class="page" id="page" contenteditable></div>
     </main>
     
     <!-- Dropdown Menus -->
