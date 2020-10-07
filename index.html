@@ -56,6 +56,15 @@
     </header>
     
     <p style="height: 80px;"></p>
+
+    <div class="savedialogue" id="savedialogue" style="display: none;" onblur="closeSave()">
+        <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeSave()">
+        <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
+        <hr style="width: 98%">
+        <br><br><br>
+        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile()">
+    </div>
+
     <main class="center">
         <!-- Dropdowns -->
         <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;" onblur="changeDrop('file-drop', false)">
@@ -89,14 +98,8 @@
             <ul class="dropdown-list"></ul>
         </div>
 
-        <div class="savedialogue" id="savedialogue" style="display: none;" onblur="closeSave()">
-            <input type="button" class="close-button" value="X" onclick="closeSave()">
-            <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
-            <br><br><br>
-            <input type="button" class="nav-button" style="width: 50px; height: 30px;" value="YES"> <input type="button" class="nav-button" style="width: 50px; height: 30px;" value="NO" onclick="newFile()">
-        </div>
-
         <div class="page" id="page" contenteditable></div>
+
     </main>
 </body>
 

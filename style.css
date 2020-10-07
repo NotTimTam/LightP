@@ -173,13 +173,14 @@ img {
 .savedialogue {
     background-color: white;
     text-align: center;
+    position: absolute;
     margin-left: calc((100vw / 2) - 300px);
-    margin-top: calc((100vh / 2) - 300px);
+    margin-top: 200px;
     width: 600px;
     height: 200px;
-    position: absolute;
     box-shadow: 1px 1px 5px gray;
     border-radius: 5px;
+    font-family: sans-serif;
 }
 
 .dropdown-child {
@@ -234,20 +235,22 @@ img {
     background: #75aaff5b;
 }
 
-.close-button {
-    background: none;
+.blue-button {
+    background: #1363e2;
     border: none;
     outline: none;
     text-align: center;
-    width: 50px;
-    height: 50px;
-    float: right;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
 }
 
-.close-button:hover {
-    background: lightgray;
+.blue-button:hover {
+    background: #4285F4;
 }
 
-.close-button:focus {
-    background: #75aaff5b;
+.blue-button:focus {
+    background: #94bdff;
 }

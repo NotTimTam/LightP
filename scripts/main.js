@@ -71,6 +71,17 @@ function closeSave() {
 // Show savedialogue.
 function openSave() {
     document.getElementById("savedialogue").style.display = "block";
+    hideTabs();
+}
+
+// Hide all tabs.
+function hideTabs() {
+    changeDrop('edit-drop', false);
+    changeDrop('file-drop', false);
+    changeDrop('view-drop', false);
+    changeDrop('insert-drop', false);
+    changeDrop('format-drop', false);
+    changeDrop('tool-drop', false);
 }
 
 // Make a new file
@@ -79,6 +90,4 @@ function newFile() {
     console.log("Creating a new file...");
     changeTitle("Unnamed Document");
     document.getElementById("page").innerHTML = "";
-    document.getElementById("page").style = "";
-    document.getElementById("page").focus;
 }
