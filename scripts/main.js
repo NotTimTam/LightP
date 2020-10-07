@@ -22,6 +22,12 @@ function setUrl() {
     document.getElementById('txtFormatUrl').value = '';
 }
 
+// Insert an image.
+function insertImage(url) {
+    document.execCommand('insertHTML', false, '<img src="' + url + '" style="width: 100%;">');
+    console.log("User inserted an image from " + url)
+}
+
 // Print feature.
 function print()
 {
@@ -39,9 +45,11 @@ function print()
 function changeForeColor() {
     color = document.getElementById("cp").value;
     format("foreColor", color);
+    color = document.getElementById("cp-t").style.color = color;
 }
 
 function changeBGColor() {
     color = document.getElementById("bcp").value;
     format("backColor", color);
+    color = document.getElementById("bcp-t").style.backgroundColor = color;
 }

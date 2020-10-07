@@ -32,11 +32,12 @@
                 <!-- Text -->
                 <li class="nav-section"><input type="button" class="tool-button" onclick="format('bold')" value="B" title="Make text bold" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="button" class="tool-button" onclick="format('italic')" value="I" title="Italicize text" style="font-weight: bolder; font-style: italic;"></li>
-                <li class="nav-section"><input type="button" class="tool-button" onclick="format('underline')" value="U" title="Underline text" style="font-weight: bolder; text-decoration: underline;"></li>
-                <li class="nav-section"><input type="color" id="cp" class="tool-button" onchange="changeForeColor()" title="Change foreground color." style="font-weight: bolder;" ></li>
-                <li class="nav-section"><input type="color" id="bcp" class="tool-button" onchange="changeBGColor()" title="Change background color." style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
+                <li class="nav-section"><input type="button" class="tool-button" onclick="format('underline')" value="U" title="Underline text" style="font-weight: bolder; text-decoration: underline; border-right: 1px lightgray solid;"></li>
+                <li class="nav-section"><span id="cp-t">A</span><input type="color" id="cp" class="tool-button" onchange="changeForeColor()" title="Change foreground color." style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
+                <li class="nav-section"><span id="bcp-t">🖋️</span><input type="color" id="bcp" class="tool-button" onchange="changeBGColor()" title="Change background color." style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
                 <!-- Extra -->
                 <li class="nav-section"><input type="button" class="tool-button emoji-tool-button" onclick="setUrl()" value="🔗" title="Turn text into a link" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button emoji-tool-button" onclick="insertImage(prompt('URL'))" value="📷" title="Insert an image" style="font-weight: bolder;"></li>
                 <!-- Document -->
                 <li class="nav-section"><input type="button" class="tool-button" onclick="format('insertunorderedlist')" value="•" title="Create an unordered list" style="font-weight: bolder;"></li>
             </ul>
