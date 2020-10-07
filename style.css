@@ -67,11 +67,6 @@ div {
     white-space: normal;
 }
 
-.inlineimage {
-    resize: both;
-    overflow: auto;
-}
-
 .center {
     margin: auto;
     width: 100%;
