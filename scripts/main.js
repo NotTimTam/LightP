@@ -123,6 +123,20 @@ window.onload = function(){
     };
 };
 
+// Email the document.
+function emailDoc() {
+    let content = document.getElementById("page").innerHTML;
+    let subject = document.getElementById("input-title").value;
+    window.open(`mailto:test@example.com?subject=${subject}&body=${content}`);
+}
+
+// Focus title.
+function focusTitle() {
+    let content = document.getElementById("input-title").focus();
+    let content = document.getElementById("input-title").select();
+}
+
+
 
 
 
