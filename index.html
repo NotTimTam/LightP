@@ -14,12 +14,12 @@
         <!-- Navigation -->
         <div class="nav-top">
             <ul class="nav">
-                <li class="nav-section"><input type="button" class="nav-button" value="File" onclick="changeDrop('file-drop', true)"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Edit" onclick="changeDrop('edit-drop', true)" onblur="changeDrop('edit-drop', false)"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="View" onclick="changeDrop('view-drop', true)" onblur="changeDrop('view-drop', false)"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Insert" onclick="changeDrop('insert-drop', true)" onblur="changeDrop('insert-drop', false)"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Format" onclick="changeDrop('format-drop', true)" onblur="changeDrop('format-drop', false)"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Tools" onclick="changeDrop('tool-drop', true)" onblur="changeDrop('tool-drop', false)"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="File" id="file-button" onclick="if (isDropOn('file-drop')) { changeDrop('file-drop', false); } else { changeDrop('file-drop', true); }"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Edit" id="edit-button" onclick="if (isDropOn('edit-drop')) { changeDrop('edit-drop', false); } else { changeDrop('edit-drop', true); }"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="View" id="view-button" onclick="if (isDropOn('view-drop')) { changeDrop('view-drop', false); } else { changeDrop('view-drop', true); }"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Insert" id="insert-button" onclick="if (isDropOn('insert-drop')) { changeDrop('insert-drop', false); } else { changeDrop('insert-drop', true); }"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Format" id="format-button" onclick="if (isDropOn('format-drop')) { changeDrop('format-drop', false); } else { changeDrop('format-drop', true); }"></li>
+                <li class="nav-section"><input type="button" class="nav-button" value="Tools" id="tool-button" onclick="if (isDropOn('tool-drop')) { changeDrop('tool-drop', false); } else { changeDrop('tool-drop', true); }"></li>
             </ul>
         </div>
 
@@ -58,21 +58,21 @@
     <p style="height: 80px;"></p>
 
     <div class="savedialogue" id="savedialogue" style="display: none;">
-        <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeSave()">
+        <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeDialogue('savedialogue')">
         <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
         <hr style="width: 98%">
         <br><br><br>
-        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES" onclick="saveFile()"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile()">
+        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES" onclick="saveAs(document.getElementById('input-title').value); closeDialogue('savedialogue');"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile()">
     </div>
 
     <main class="center">
         <!-- Dropdowns -->
-        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;" onblur="changeDrop('file-drop', false)">
+        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -54px;" tabindex="0">
             <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openSave()"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openDialogue('savedialogue')"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Open" onclick=""></li>
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="Email" onclick=""></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick=""></li>
+                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick="saveAs(document.getElementById('input-title').value)"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Rename" onclick=""></li>
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="Print" onclick=""></li>
             </ul>
@@ -103,6 +103,7 @@
     </main>
 </body>
 
+<script src="scripts/download.js"></script>
 <script src="scripts/main.js"></script>
 
 </html>

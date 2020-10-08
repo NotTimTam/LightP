@@ -62,16 +62,23 @@ function changeDrop(id, yes=true) {
         document.getElementById(id).style.display = "none";
     }
 }
+function isDropOn(id) {
+    if (document.getElementById(id).style.display == "none") {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 // Hide savedialogue.
-function closeSave() {
-    document.getElementById("savedialogue").style.display = "none";
+function closeDialogue(id) {
+    document.getElementById(id).style.display = "none";
 }
 
 // Show savedialogue.
-function openSave() {
-    document.getElementById("savedialogue").style.display = "block";
-    document.getElementById("savedialogue").focus();
+function openDialogue(id) {
+    document.getElementById(id).style.display = "block";
+    document.getElementById(id).focus();
     hideTabs();
 }
 
@@ -85,9 +92,15 @@ function hideTabs() {
     changeDrop('tool-drop', false);
 }
 
+// Save as.
+function saveAs(name="Untitled Document", extension="rtf") {
+    changeTitle(name);
+    download((name + "." + extension), document.getElementById("page").innerHTML);
+}
+
 // Make a new file
 function newFile() {
-    closeSave();
+    closeDialogue("savedialogue");
     console.log("Creating a new file...");
     changeTitle("Unnamed Document");
     document.getElementById("page").innerHTML = "";
@@ -100,16 +113,17 @@ function saveFile() {
     console.log("Downloaded user data.");
 }
 
-// Download files.
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
+// Hide divs when you click outside of them.
+window.onload = function(){
+    document.onclick = function(e){
+        if(e.target.id !== 'file-drop' && e.target.id !== 'file-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('file-drop', false);
+        }
+    };
+};
 
-    element.style.display = 'none';
-    document.body.appendChild(element);
 
-    element.click();
 
-    document.body.removeChild(element);
-}
+
+
