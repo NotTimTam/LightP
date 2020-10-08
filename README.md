@@ -8,5 +8,6 @@ Is a lightweight word processor for the web.
 - Add dark mode.
 - Update linking and image adding to include inline functions.
 ### Finished:
-- Icons
+- Icons.
 - Base functionality. (pages with typing, keyboard shortcuts, website layout, etc.)
+- Dropdown menus.
