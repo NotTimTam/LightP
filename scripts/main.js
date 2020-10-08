@@ -13,9 +13,9 @@ function changeTitle(value) {
 let input = document.getElementById("input-title");
 
 input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    document.getElementById("input-title").blur();
-  }
+    if (event.keyCode === 13) {
+        document.getElementById("input-title").blur();
+    }
 });
 
 // Run command.
