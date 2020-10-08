@@ -76,6 +76,7 @@ div {
 .image-button {
     width: 16px;
     height: 16px;
+    margin-bottom: 0px;
 }
 
 img {
@@ -92,9 +93,12 @@ img {
     background: none;
     outline: none;
     border-radius: 2px;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     padding: 10px;
+}
+
+.text-button {
+    transform: translateY(-12px);
 }
 
 .tool-button:hover {
