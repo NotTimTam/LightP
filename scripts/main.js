@@ -137,8 +137,18 @@ function focusTitle() {
     document.getElementById("input-title").select();
 }
 
+let file = "";
+// Get the contents when a user opens a file.
+const fileSelector = document.getElementById('file-selector');
+fileSelector.addEventListener('change', (event) => {
+  file = event.target.file;
+  console.log("User loaded a file.");
+  openDialogue('opendialogue');
+});
 
-
-
-
-
+// Load the file.
+function loadFile() {
+  closeDialogue("opendialogue");
+  document.getElementById("page").innerHTML = file;
+  document.getElementById('file-selector').value = '';
+}
