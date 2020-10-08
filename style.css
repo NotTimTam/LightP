@@ -234,7 +234,7 @@ img {
 }
 
 .custom-file-input {
-  width: 268px;
+    width: 268px;
 }
 
 .custom-file-input::before {
