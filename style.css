@@ -192,7 +192,7 @@ img {
 .dropdown-child {
     background-color: white;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 250px;
     position: absolute;
     box-shadow: 1px 1px 5px gray;
     border-radius: 5px;
