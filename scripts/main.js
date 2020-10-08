@@ -126,7 +126,7 @@ window.onload = function(){
     document.onclick = function(e){
         // Check if you clicked the page and it is editable.
         if(e.target.id == 'page') {
-          document.getElementById('page').setAttribute('contenteditable', true);
+            document.getElementById('page').setAttribute('contenteditable', true);
         }
         if(e.target.id !== 'file-drop' && e.target.id !== 'file-button'){
             //element clicked wasn't the div; hide the div
@@ -158,22 +158,22 @@ let file = "";
 // Get the contents when a user opens a file.
 const fileSelector = document.getElementById('file-selector');
 fileSelector.addEventListener('change', (event) => {
-  file = event.target.file;
-  console.log("User loaded a file.");
-  openDialogue('opendialogue');
+    file = event.target.file;
+    console.log("User loaded a file.");
+    openDialogue('opendialogue');
 });
 
 // Load the file.
 function loadFile() {
-  closeDialogue("opendialogue");
-  document.getElementById("page").innerHTML = file;
-  document.getElementById('file-selector').value = '';
+    closeDialogue("opendialogue");
+    document.getElementById("page").innerHTML = file;
+    document.getElementById('file-selector').value = '';
 }
 
 // KEYBOARD SHORTCUTS.
 document.addEventListener("keydown", function(e) {
-  if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-    e.preventDefault();
-    saveAs(document.getElementById('input-title').value);
-  }
+    if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        e.preventDefault();
+        saveAs(document.getElementById('input-title').value);
+    }
 });
