@@ -132,8 +132,8 @@ function emailDoc() {
 
 // Focus title.
 function focusTitle() {
-    let content = document.getElementById("input-title").focus();
-    let content = document.getElementById("input-title").select();
+    document.getElementById("input-title").focus();
+    document.getElementById("input-title").select();
 }
 
 
