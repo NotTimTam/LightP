@@ -29,8 +29,7 @@ function insertImage(url) {
 }
 
 // Print feature.
-function print()
-{
+function print() {
     var prtContent = document.getElementById("page");
     console.log(prtContent)
     var WinPrint = window.open('', '', 'letf=100,top=100,width=600,height=600');
