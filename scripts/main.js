@@ -119,6 +119,10 @@ window.onload = function(){
             //element clicked wasn't the div; hide the div
             changeDrop('file-drop', false);
         }
+        if(e.target.id !== 'tool-drop' && e.target.id !== 'tool-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('tool-drop', false);
+        }
     };
 };
 
