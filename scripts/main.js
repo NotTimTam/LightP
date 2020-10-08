@@ -115,6 +115,10 @@ function saveFile() {
 // Hide divs when you click outside of them.
 window.onload = function(){
     document.onclick = function(e){
+        // Check if you clicked the page and it is editable.
+        if(e.target.id == 'page') {
+          document.getElementById('page').setAttribute('contenteditable', true);
+        }
         if(e.target.id !== 'file-drop' && e.target.id !== 'file-button'){
             //element clicked wasn't the div; hide the div
             changeDrop('file-drop', false);

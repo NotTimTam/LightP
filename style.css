@@ -54,6 +54,7 @@ main {
 
 .page {
     background-color: white;
+    min-height: 840px;
     height: max-content;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -66,7 +67,7 @@ main {
     white-space: normal;
 }
 
-/* GET MR. PECK's HELP */
+/* GET MR. PECK's HELP WITH LINE BREAK */
 
 div {
     line-break: strict;
