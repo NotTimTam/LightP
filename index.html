@@ -90,7 +90,14 @@
         </div>
 
         <div class="dropdown-child" id="edit-drop" style="display: none; margin-left: 58px; margin-top: -52px;">
-            <ul class="dropdown-list"></ul>
+            <ul class="dropdown-list">
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Undo (Ctrl+Z)" onclick="format('undo')"></li>
+                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Redo (Ctrl+Y)" onclick="format('redo')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Cut (Ctrl+X)" onclick="format('cut')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Copy (Ctrl+C)" onclick="format('copy')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Paste (Ctrl+V)" onclick="format('paste')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Select all (Ctrl+A)" onclick="format('selectAll')"></li>
+            </ul>
         </div>
 
         <div class="dropdown-child" id="view-drop" style="display: none; margin-left: 97px; margin-top: -52px;">

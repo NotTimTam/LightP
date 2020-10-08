@@ -136,6 +136,10 @@ window.onload = function(){
             //element clicked wasn't the div; hide the div
             changeDrop('tool-drop', false);
         }
+        if(e.target.id !== 'edit-drop' && e.target.id !== 'edit-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('edit-drop', false);
+        }
     };
 };
 
