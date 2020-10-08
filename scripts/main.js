@@ -9,6 +9,15 @@ function changeTitle(value) {
     // IMPLEMENT DOCUMENT SAVE CHANGE TITLE.
 }
 
+// Exit out of title editing when you hit enter.
+let input = document.getElementById("input-title");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    document.getElementById("input-title").blur();
+  }
+});
+
 // Run command.
 function format(command, value) {
     document.execCommand(command, false, value);
