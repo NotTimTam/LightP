@@ -7,6 +7,9 @@ Is a lightweight word processor for the web.
 - Add dark mode.
 - Update linking and image adding to include inline functions.
 - Finish loading and saving different file types.
+- Title manipulation.
+- Autosaving.
+- CSS Animations.
 ### Finished:
 - Icons.
 - Base functionality. (pages with typing, keyboard shortcuts, website layout, etc.)
