@@ -102,7 +102,7 @@ function saveAs(name="Untitled Document", extension="rtf") {
 function newFile() {
     closeDialogue("savedialogue");
     console.log("Creating a new file...");
-    changeTitle("Unnamed Document");
+    changeTitle("Untitledg Document");
     document.getElementById("page").innerHTML = "";
 }
 
