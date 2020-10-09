@@ -192,3 +192,20 @@ function changeFont(name) {
     document.getElementById('font-button').style.fontFamily = name;
     format('fontName', name);
 }
+
+// Change font size.
+function changeFontSize(value=1) {
+    let val = Number((document.getElementById("font-size-disp").value));
+    // Font size bounds.
+    if (val < 2) {
+        val = 2;
+    }
+    if (val > 6) {
+        val = 6;
+    }
+
+    finalval = val + value;
+    document.getElementById("font-size-disp").value = finalval;
+
+    document.execCommand('fontSize', false, finalval);
+}

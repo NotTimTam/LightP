@@ -30,7 +30,10 @@
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="print()" src="images/print.png" title="Print" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
                 <!-- Font -->
                 <li class="nav-section"><input type="button" class="tool-button text-button" id="font-button" onclick="if (isDropOn('font-drop')) { changeDrop('font-drop', false); } else { changeDrop('font-drop', true); }" value="Arial" title="Change the font" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="alert('NOT IMPLEMENTED')" value="Font Size" title="Change the font size" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
+                <!-- Font Size -->
+                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="changeFontSize(-1)" value="-" title="Lower the font size" style="font-weight: bolder; border: 1px solid darkgray; border-radius: 0.2em;"></li>
+                <li class="nav-section"><input type="text" class="tool-button text-button" onchange="format('fontSize', this.value)" value="3" id="font-size-disp" title="Change the font size" style="font-weight: bolder; width: 48px;"></li>
+                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="changeFontSize(1)" value="+" title="Raise the font size" style="font-weight: bolder; border: 1px solid darkgray; border-radius: 0.2em;"></li>
                 <!-- Text -->
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('bold')" src="images/bold.png" title="Embolden text (Ctrl+B)" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('italic')" src="images/italic.png" title="Italicize text (Ctrl+I)" style="font-weight: bolder; font-style: italic;"></li>
