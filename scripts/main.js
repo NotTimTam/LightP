@@ -140,6 +140,10 @@ window.onload = function(){
             //element clicked wasn't the div; hide the div
             changeDrop('edit-drop', false);
         }
+        if(e.target.id !== 'font-drop' && e.target.id !== 'font-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('font-drop', false);
+        }
     };
 };
 
@@ -181,3 +185,10 @@ document.addEventListener("keydown", function(e) {
         saveAs(document.getElementById('input-title').value);
     }
 });
+
+// Change the font.
+function changeFont(name) {
+    document.getElementById('font-button').value = name;
+    document.getElementById('font-button').style.fontFamily = name;
+    format('fontName', name);
+}

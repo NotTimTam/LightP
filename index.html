@@ -29,7 +29,7 @@
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('redo')" src="images/redo.png" title="Redo (Ctrl+Y)" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="print()" src="images/print.png" title="Print" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
                 <!-- Font -->
-                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="alert('NOT IMPLEMENTED')" value="Font" title="Change the font" style="font-weight: bolder;"></li>
+                <li class="nav-section"><input type="button" class="tool-button text-button" id="font-button" onclick="if (isDropOn('font-drop')) { changeDrop('font-drop', false); } else { changeDrop('font-drop', true); }" value="Arial" title="Change the font" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="button" class="tool-button text-button" onclick="alert('NOT IMPLEMENTED')" value="Font Size" title="Change the font size" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
                 <!-- Text -->
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('bold')" src="images/bold.png" title="Embolden text (Ctrl+B)" style="font-weight: bolder;"></li>
@@ -105,6 +105,26 @@
         <div class="dropdown-child" id="tool-drop" style="display: none; margin-left: 147px; margin-top: -52px;">
             <ul class="dropdown-list">
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="About" onclick="window.open('https://github.com/NotTimTam/LightP/blob/main/README.md')"></li>
+            </ul>
+        </div>
+
+        <!-- Toolbar Dropdowns -->
+        <div class="dropdown-child" id="font-drop" style="display: none; margin-left: 142px; margin-top: -5px;">
+            <ul class="dropdown-list">
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Alegreya;" value="Alegreya" onclick="changeFont('Alegreya')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Arial;" value="Arial" onclick="changeFont('Arial')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Calibri;" value="Calibri" onclick="changeFont('Calibri')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Cambria;" value="Cambria" onclick="changeFont('Cambria')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;" value="Comic Sans" onclick="changeFont('Comic Sans MS')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Courier New', Courier, monospace;" value="Courier New" onclick="changeFont('Courier New')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow'" value="Franklin Gothic" onclick="changeFont('Franklin Gothic Medium')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Georgia;" value="Georgia" onclick="changeFont('Georgia')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Impact;" value="Impact" onclick="changeFont('Impact')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Roboto;" value="Roboto" onclick="changeFont('Roboto')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Times New Roman', Times;" value="Times New Roman" onclick="changeFont('Times New Roman')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Trebuchet MS';" value="Trebuchet" onclick="changeFont('Trebuchet MS')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Verdana" value="Verdana" onclick="changeFont('Verdana')"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Century Gothic'" value="Century Gothic" onclick="changeFont('Century Gothic')"></li>
             </ul>
         </div>
 
