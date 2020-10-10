@@ -34,7 +34,7 @@ function setUrl() {
 // Insert an image.
 function insertImage(url) {
     document.execCommand('insertHTML', false, '<img src="' + url + '" style="width: 100%;">');
-    console.log("User inserted an image from " + url)
+    console.log("User inserted an image from " + url);
 }
 
 // Print feature.
@@ -46,7 +46,7 @@ function print() {
     WinPrint.document.close();
     WinPrint.focus();
     WinPrint.print();
-    WinPrint.close()   
+    WinPrint.close();
 }
 
 // Color feature.
@@ -194,18 +194,22 @@ function changeFont(name) {
 }
 
 // Change font size.
-function changeFontSize(value=1) {
-    let val = Number((document.getElementById("font-size-disp").value));
-    // Font size bounds.
-    if (val < 2) {
-        val = 2;
+function changeFontSize(amount) {
+    document.execCommand("fontSize", false, "7");
+    var fontElements = document.getElementsByTagName("font");
+    for (var i = 0, len = fontElements.length; i < len; ++i) {
+        if (fontElements[i].size == "7") {
+            fontElements[i].removeAttribute("size");
+            let oldvalue = Number(document.getElementById("font-size-disp").value);
+            let newvalue = oldvalue + amount;
+            if (newvalue < 4) {
+                newvalue = 4;
+            }
+            if (newvalue > 400) {
+                newvalue = 400;
+            }
+            fontElements[i].style.fontSize = String(newvalue) + "px";
+            document.getElementById("font-size-disp").value = String(newvalue);
+        }
     }
-    if (val > 6) {
-        val = 6;
-    }
-
-    finalval = val + value;
-    document.getElementById("font-size-disp").value = finalval;
-
-    document.execCommand('fontSize', false, finalval);
 }
