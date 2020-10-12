@@ -6,6 +6,16 @@
     <title>Untitled Document - LightP</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Tim Phillips">
+    <meta name="description" content="A lightweight word processor for the web.">
+    
+    <meta property="og:image" content="images/highlight.png">
+    <meta property="og:description" content="A lightweight word processor for the web.">
+    <meta property="og:title" content="LightP">
+
+    <link rel="shortcut icon" href="images/highlight.png".png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -82,7 +92,7 @@
         <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -52px;" tabindex="0">
             <ul class="dropdown-list">
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openDialogue('savedialogue')"></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="file" class="dropdown-button custom-file-input" accept=".txt, .html, .pdf, .rtf, .doc, .docx" id="file-selector"></li>
+                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="file" class="dropdown-button custom-file-input" accept=".txt, .rtf" id="file-selector"></li>
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="Print" onclick="print()"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick="saveAs(document.getElementById('input-title').value)"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Rename" onclick="focusTitle()"></li>

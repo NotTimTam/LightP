@@ -170,7 +170,8 @@ fileSelector.addEventListener('change', (event) => {
 // Load the file.
 function loadFile() {
     closeDialogue("opendialogue");
-    document.getElementById("page").innerHTML = file;
+    dt = convertHtmlToRtf(file);
+    document.getElementById("page").innerHTML = dt;
     document.getElementById('file-selector').value = '';
 }
 
