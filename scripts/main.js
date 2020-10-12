@@ -151,14 +151,6 @@ window.onload = function(){
     };
 };
 
-// Email the document.
-function emailDoc() {
-    console.log("Sending email.");
-    let content = document.getElementById("page").innerHTML;
-    let subject = document.getElementById("input-title").value;
-    window.open(`mailto:test@example.com?subject=${subject}&body=${content}`);
-}
-
 // Focus title.
 function focusTitle() {
     console.log("Focusing on the title so the user can edit it.");
