@@ -33,7 +33,7 @@ function setUrl() {
 
 // Insert an image.
 function insertImage(url) {
-    document.execCommand('insertHTML', false, '<img src="' + url + '" style="width: 100%;">');
+    document.execCommand('insertHTML', false, '<img src="' + url + '" style="width: 100%; resize=both">');
     console.log("User inserted an image from " + url);
 }
 
