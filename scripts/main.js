@@ -144,6 +144,10 @@ window.onload = function(){
             //element clicked wasn't the div; hide the div
             changeDrop('font-drop', false);
         }
+        if(e.target.id !== 'line-height-drop' && e.target.id !== 'line-height-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('line-height-drop', false);
+        }
     };
 };
 
@@ -202,14 +206,26 @@ function changeFontSize(amount) {
             fontElements[i].removeAttribute("size");
             let oldvalue = Number(document.getElementById("font-size-disp").value);
             let newvalue = oldvalue + amount;
-            if (newvalue < 4) {
-                newvalue = 4;
+            if (newvalue < 8) {
+                newvalue = 8;
             }
             if (newvalue > 400) {
                 newvalue = 400;
             }
             fontElements[i].style.fontSize = String(newvalue) + "px";
             document.getElementById("font-size-disp").value = String(newvalue);
+        }
+    }
+}
+
+// Change font spacing.
+function setFontSpacing(value) {
+    document.execCommand("fontSize", false, "1");
+    var fontElements = document.getElementsByTagName("font");
+    for (var i = 0, len = fontElements.length; i < len; ++i) {
+        if (fontElements[i].size == "1") {
+            fontElements[i].removeAttribute("size");
+            fontElements[i].style.lineHeight = value;
         }
     }
 }
