@@ -50,7 +50,11 @@ function checkToSave() {
     if (localStorage.getItem(fileName) == document.getElementById("page").innerHTML) {
         console.log("File hasn't changed. Not saving...");
     } else {
-        updateSaveFile();
+        if (document.activeElement != document.getElementById("input-title")) {
+            updateSaveFile();
+        } else {
+            console.log("Didn't save file. (name change in progress)");
+        }
     }
     document.getElementById("savestatus").innerHTML = "Saved";
 }

@@ -35,7 +35,7 @@
         <!-- Tools -->
         <div class="nav-bottom">
             <ul class="nav">
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="updateSaveFile(); location.href = 'index.html';" src="images/home.png" title="Return to home." style="border-right: 1px lightgray solid;"></li>
+                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="checkToSave(); location.href = 'index.html';" src="images/home.png" title="Return to home." style="border-right: 1px lightgray solid;"></li>
                 <!-- Screen -->
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('undo')" src="images/undo.png" title="Undo (Ctrl+Z)" style="font-weight: bolder;"></li>
                 <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('redo')" src="images/redo.png" title="Redo (Ctrl+Y)" style="font-weight: bolder;"></li>
@@ -96,6 +96,7 @@
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openDialogue('savedialogue')"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="file" class="dropdown-button custom-file-input" accept=".txt, .rtf" id="file-selector"></li>
                 <li class="dropdown-section"><input type="button" class="dropdown-button" value="Print" onclick="print()"></li>
+                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Save" onclick="checkToSave()"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick="saveAs(document.getElementById('input-title').value)"></li>
                 <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Rename" onclick="focusTitle()"></li>
             </ul>
