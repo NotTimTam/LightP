@@ -103,7 +103,7 @@ function hideTabs() {
 // Save as.
 function saveAs(name="Untitled Document", extension="rtf") {
     changeTitle(name);
-    download((name + "." + extension), document.getElementById("page").innerHTML);
+    download((name + "." + extension), toRTF(document.getElementById("page").innerHTML));
 }
 
 // Make a new file
