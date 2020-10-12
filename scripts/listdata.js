@@ -30,6 +30,13 @@ function listFiles() {
         brk.setAttribute("style", "opacity: 50%; width: 95%;")
         list.appendChild(brk);
     }
+
+    if(document.getElementById("existingdocs-list").children.length < 3) {
+        let child = document.createElement("p");
+        child.innerHTML = "<br><br>NO LOCAL FILES";
+        child.setAttribute("style", "font-weight: bolder; text-align: center; color: red;")
+        list.appendChild(child);
+    }
 }
 
 listFiles();
