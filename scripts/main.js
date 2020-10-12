@@ -1,14 +1,3 @@
-// Change title.
-function changeTitle(value) {
-    if (value != "") {
-        document.title = `${value} - LightP`
-    } else {
-        document.title = `Untitled Document - LightP`
-        document.getElementById("input-title").value = "Untitled Document";
-    }
-    // IMPLEMENT DOCUMENT SAVE CHANGE TITLE.
-}
-
 // Exit out of title editing when you hit enter.
 let input = document.getElementById("input-title");
 
@@ -121,36 +110,6 @@ function saveFile() {
     console.log("Downloaded user data.");
 }
 
-// Hide divs when you click outside of them.
-window.onload = function(){
-    document.onclick = function(e){
-        // Check if you clicked the page and it is editable.
-        if(e.target.id == 'page') {
-            document.getElementById('page').setAttribute('contenteditable', true);
-        }
-        if(e.target.id !== 'file-drop' && e.target.id !== 'file-button'){
-            //element clicked wasn't the div; hide the div
-            changeDrop('file-drop', false);
-        }
-        if(e.target.id !== 'tool-drop' && e.target.id !== 'tool-button'){
-            //element clicked wasn't the div; hide the div
-            changeDrop('tool-drop', false);
-        }
-        if(e.target.id !== 'edit-drop' && e.target.id !== 'edit-button'){
-            //element clicked wasn't the div; hide the div
-            changeDrop('edit-drop', false);
-        }
-        if(e.target.id !== 'font-drop' && e.target.id !== 'font-button'){
-            //element clicked wasn't the div; hide the div
-            changeDrop('font-drop', false);
-        }
-        if(e.target.id !== 'line-height-drop' && e.target.id !== 'line-height-button'){
-            //element clicked wasn't the div; hide the div
-            changeDrop('line-height-drop', false);
-        }
-    };
-};
-
 // Focus title.
 function focusTitle() {
     console.log("Focusing on the title so the user can edit it.");
@@ -222,3 +181,55 @@ function setFontSpacing(value) {
         }
     }
 }
+
+// Load page types.
+window.onload = function(){
+
+    document.onclick = function(e){
+        // Check if you clicked the page and it is editable.
+        if(e.target.id == 'page') {
+            document.getElementById('page').setAttribute('contenteditable', true);
+        }
+        if(e.target.id !== 'file-drop' && e.target.id !== 'file-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('file-drop', false);
+        }
+        if(e.target.id !== 'tool-drop' && e.target.id !== 'tool-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('tool-drop', false);
+        }
+        if(e.target.id !== 'edit-drop' && e.target.id !== 'edit-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('edit-drop', false);
+        }
+        if(e.target.id !== 'font-drop' && e.target.id !== 'font-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('font-drop', false);
+        }
+        if(e.target.id !== 'line-height-drop' && e.target.id !== 'line-height-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('line-height-drop', false);
+        }
+        if(e.target.id !== 'open-drop' && e.target.id !== 'open-button'){
+            //element clicked wasn't the div; hide the div
+            changeDrop('open-drop', false);
+        }
+    };
+
+    var hash = (window.location.hash).replace('#', '');
+    console.log(hash);
+    if (hash.length == 0) {
+        createSaveFile();
+    }
+    else {
+        if (hash == "blank") {
+            createSaveFile();
+        } else {
+            console.log("Not an empty window. Loading files...")
+            convertedHash = hash.replaceAll("%20", " ");
+            openSaveFile(convertedHash);
+        }
+    }
+}
+
+window.setInterval(checkToSave, 5000);

@@ -252,7 +252,7 @@ img {
 }
 
 .custom-file-input::before {
-    content: 'Upload';
+    content: 'Open';
     -webkit-user-select: none;
     margin: 0px;
     padding-top: 10px;
@@ -291,4 +291,64 @@ img {
 
 .blue-button:focus {
     background: #94bdff;
+}
+
+.newdoc {
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    margin: 0px;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.docselector-image {
+    width: 20%;
+    height: 20%;
+    border: 1px gray solid;
+    border-radius: 5px;
+    outline: none;
+}
+
+.docselector-image:hover {
+    border: 1px #4285F4 solid;
+}
+
+.docselector-image:active {
+    border: 1px gray solid;
+}
+
+.docselector:hover {
+    animation-name: docselection;
+    animation-duration: 1s;
+}
+
+.docselector {
+    width: 100%;
+}
+
+@keyframes docselection {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.existingdocs-list {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 1.5in;
+    width: 60%;
+    list-style: none;
+}
+
+.existingdocs-listitem {
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.existingdocs-listitem:hover {
+    background-color: #94bdff;
+    border-radius: 2em;
 }

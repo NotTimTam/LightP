@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled Document - LightP</title>
+    <title>LightP</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,146 +16,42 @@
     <meta property="og:title" content="LightP">
 
     <link rel="shortcut icon" href="images/highlight.png".png" type="image/x-icon">
+
 </head>
-<body>
-    <header>
-        <!-- Title -->
-        <input type="text" minlength="1" name="title" value="Untitled Document" id="input-title" class="title" placeholder="Untitled document" autocomplete="off" autocapitalize="off" onchange="changeTitle(this.value)">
-        <!-- Navigation -->
-        <div class="nav-top">
-            <ul class="nav">
-                <li class="nav-section"><input type="button" class="nav-button" value="File" id="file-button" onclick="if (isDropOn('file-drop')) { changeDrop('file-drop', false); } else { changeDrop('file-drop', true); }"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Edit" id="edit-button" onclick="if (isDropOn('edit-drop')) { changeDrop('edit-drop', false); } else { changeDrop('edit-drop', true); }"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Insert" id="insert-button" onclick="if (isDropOn('insert-drop')) { changeDrop('insert-drop', false); } else { changeDrop('insert-drop', true); }"></li>
-                <li class="nav-section"><input type="button" class="nav-button" value="Tools" id="tool-button" onclick="if (isDropOn('tool-drop')) { changeDrop('tool-drop', false); } else { changeDrop('tool-drop', true); }"></li>
-            </ul>
+<body style="background-color: white; padding: 0px; margin: 0px; overflow-y: scroll;">
+    <div class="newdoc" id="newdoc">
+        <h3>Start a new document</h3>
+        <div class="docselectors" id="docselectors">
+            <div class="docselector" id="blank">
+                <input type="image" src="images/blank.png" class="docselector-image" onclick="location.href = 'editor.html#blank'">
+                <p style="font-weight: bolder;">Blank</p>
+            </div>
         </div>
-
-        <!-- Tools -->
-        <div class="nav-bottom">
-            <ul class="nav">
-                <!-- Screen -->
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('undo')" src="images/undo.png" title="Undo (Ctrl+Z)" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('redo')" src="images/redo.png" title="Redo (Ctrl+Y)" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="print()" src="images/print.png" title="Print" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
-                <!-- Font -->
-                <li class="nav-section"><input type="button" class="tool-button text-button" id="font-button" onclick="if (isDropOn('font-drop')) { changeDrop('font-drop', false); } else { changeDrop('font-drop', true); }" value="Arial" title="Change the font" style="font-weight: bolder;"></li>
-                <!-- Font Size -->
-                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="changeFontSize(-1, 'px')" value="-" title="Lower the font size" style="font-weight: bolder; border: 1px solid darkgray; border-radius: 0.2em;"></li>
-                <li class="nav-section"><input type="text" class="tool-button text-button" onchange="changeFontSize(this.value, 'px')" value="16" id="font-size-disp" title="Change the font size" style="font-weight: bolder; width: 48px;" disabled></li>
-                <li class="nav-section"><input type="button" class="tool-button text-button" onclick="changeFontSize(1, 'px')" value="+" title="Raise the font size" style="font-weight: bolder; border: 1px solid darkgray; border-radius: 0.2em;"></li>
-                <!-- Text -->
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('bold')" src="images/bold.png" title="Embolden text (Ctrl+B)" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('italic')" src="images/italic.png" title="Italicize text (Ctrl+I)" style="font-weight: bolder; font-style: italic;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('underline')" src="images/underline.png" title="Underline text (Ctrl+U)" style="font-weight: bolder; text-decoration: underline; border-right: 1px lightgray solid;"></li>
-                <!-- Color -->
-                <li class="nav-section"><input type="color" id="cp" class="tool-button text-button" onchange="changeForeColor()" title="Change foreground color." style="font-weight: bolder; padding: 5px; width: 20px;"></li>
-                <li class="nav-section"><input type="color" id="bcp" class="tool-button text-button" onchange="changeBGColor()" title="Change background color." style="font-weight: bolder; border-right: 1px lightgray solid; padding: 5px; width: 20px;"></li>
-                <!-- Extra -->
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="setUrl()" src="images/link.png" title="Turn text into a link" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="insertImage(prompt('URL'))" src="images/img.png" title="Insert an image" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
-                <!-- Page -->
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyLeft')" src="images/left.png" title="Align text left" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyCenter')" src="images/center.png" title="Align text center" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyRight')" src="images/right.png" title="Align text right" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('justifyFull')" src="images/justify.png" title="Justify text" style="font-weight: bolder; border-right: 1px lightgray solid; width: 14px; height: 14px; padding: 11px;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" src="images/spacing.png" id="line-height-button" onclick="if (isDropOn('line-height-drop')) { changeDrop('line-height-drop', false); } else { changeDrop('line-height-drop', true); }" title="Change the line height" style="font-weight: bolder; border-right: 1px lightgray solid; width: 14px; height: 14px; padding: 11px;"></li>
-                <!-- Document -->
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('insertorderedlist')" src="images/order.png" title="Create an ordered list" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('insertunorderedlist')" src="images/unorder.png" title="Create an unordered list" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('indent')" src="images/indent_right.png" title="Indent a tab left" style="font-weight: bolder;"></li>
-                <li class="nav-section"><input type="image" class="tool-button image-button" onclick="format('outdent')" src="images/indent_left.png" title="Indent a tab right" style="font-weight: bolder; border-right: 1px lightgray solid;"></li>
-            </ul>
-        </div>
-    </header>
-    
-    <p style="height: 80px;"></p>
-
-    <div class="dialogue" id="savedialogue" style="display: none;">
-        <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeDialogue('savedialogue')">
-        <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
-        <hr style="width: 98%">
-        <br><br><br>
-        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES" onclick="saveAs(document.getElementById('input-title').value); closeDialogue('savedialogue');"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="newFile();">
+    </div>
+    <div class="existingdocs" id="existingdocs">
+        <ul class="existingdocs-list" id="existingdocs-list">
+            <h3>Documents in Local Browser</h3>
+        </ul>
     </div>
 
-    <div class="dialogue" id="opendialogue" style="display: none;">
-        <input type="button" class="blue-button" style="float: right; font-weight: bolder;" value="X" onclick="closeDialogue('opendialogue')">
-        <h3 style="margin-left: 20px; text-align: left;">Save the current file first?</h3>
-        <hr style="width: 98%">
-        <br><br><br>
-        <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="YES" onclick="saveAs(document.getElementById('input-title').value); closeDialogue('opendialogue'); loadFile();"> <input type="button" class="blue-button" style="width: 50px; height: 30px; font-size: 18px;" value="NO" onclick="loadFile();">
-    </div>
+    <script>
+        // Startup fileload page.
+        function listFiles() {
+            list = document.getElementById("existingdocs-list");
+            locallength = localStorage.length;
+            for (let i=0; i<locallength; i++) {
+                child = document.createElement("li");
+                child.innerHTML = "📝 " + localStorage.key(i);
+                child.setAttribute("class", "existingdocs-listitem");
+                child.setAttribute("onclick", `location.href = 'editor.html#${localStorage.key(i)}'`);
+                list.appendChild(child);
+                brk = document.createElement("hr");
+                brk.setAttribute("style", "opacity: 50%; width: 95%;")
+                list.appendChild(brk);
+            }
+        }
 
-    <main class="center">
-        <!-- Dropdowns -->
-        <div class="dropdown-child" id="file-drop" style="display: none; margin-left: 20px; margin-top: -52px;" tabindex="0">
-            <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="New" onclick="openDialogue('savedialogue')"></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="file" class="dropdown-button custom-file-input" accept=".txt, .rtf" id="file-selector"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Print" onclick="print()"></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Download" onclick="saveAs(document.getElementById('input-title').value)"></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Rename" onclick="focusTitle()"></li>
-            </ul>
-        </div>
-
-        <div class="dropdown-child" id="edit-drop" style="display: none; margin-left: 58px; margin-top: -52px;">
-            <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Undo (Ctrl+Z)" onclick="format('undo')"></li>
-                <li class="dropdown-section" style="border-bottom: 1px lightgray solid;"><input type="button" class="dropdown-button" value="Redo (Ctrl+Y)" onclick="format('redo')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Cut (Ctrl+X)" onclick="format('cut')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Copy (Ctrl+C)" onclick="format('copy')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Paste (Ctrl+V)" onclick="format('paste')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Select all (Ctrl+A)" onclick="format('selectAll')"></li>
-            </ul>
-        </div>
-
-        <div class="dropdown-child" id="insert-drop" style="display: none; margin-left: 142px; margin-top: -52px;">
-            <ul class="dropdown-list"></ul>
-        </div>
-
-        <div class="dropdown-child" id="tool-drop" style="display: none; margin-left: 147px; margin-top: -52px;">
-            <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="About" onclick="window.open('https://github.com/NotTimTam/LightP/blob/main/README.md')"></li>
-            </ul>
-        </div>
-
-        <!-- Toolbar Dropdowns -->
-        <div class="dropdown-child" id="font-drop" style="display: none; margin-left: 142px; margin-top: -5px;">
-            <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Alegreya;" value="Alegreya" onclick="changeFont('Alegreya')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Arial;" value="Arial" onclick="changeFont('Arial')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Calibri;" value="Calibri" onclick="changeFont('Calibri')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Cambria;" value="Cambria" onclick="changeFont('Cambria')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;" value="Comic Sans" onclick="changeFont('Comic Sans MS')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Courier New', Courier, monospace;" value="Courier New" onclick="changeFont('Courier New')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow'" value="Franklin Gothic" onclick="changeFont('Franklin Gothic Medium')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Georgia;" value="Georgia" onclick="changeFont('Georgia')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Impact;" value="Impact" onclick="changeFont('Impact')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Roboto;" value="Roboto" onclick="changeFont('Roboto')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Times New Roman', Times;" value="Times New Roman" onclick="changeFont('Times New Roman')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Trebuchet MS';" value="Trebuchet" onclick="changeFont('Trebuchet MS')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: Verdana" value="Verdana" onclick="changeFont('Verdana')"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" style="font-family: 'Century Gothic'" value="Century Gothic" onclick="changeFont('Century Gothic')"></li>
-            </ul>
-        </div>
-
-        <!-- Line Height Dropdown -->
-        <div class="dropdown-child" id="line-height-drop" style="display: none; margin-left: 773px; margin-top: -6px;">
-            <ul class="dropdown-list">
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Single" onclick="setFontSpacing(1)"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="1.15" onclick="setFontSpacing(1.25)"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="1.5" onclick="setFontSpacing(1.5)"></li>
-                <li class="dropdown-section"><input type="button" class="dropdown-button" value="Double" onclick="setFontSpacing(2)"></li>
-            </ul>
-        </div>
-
-        <div class="page" id="page" contenteditable onselect></div>
-    </main>
-
-    <script src="scripts/autosave.js"></script>
-    <script src="scripts/htmltortf.js"></script>
-    <script src="scripts/download.js"></script>
-    <script src="scripts/main.js"></script>
+        listFiles();
+    </script>
 </body>
 </html>
