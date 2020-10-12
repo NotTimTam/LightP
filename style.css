@@ -304,8 +304,7 @@ img {
 }
 
 .docselector-image {
-    width: 20%;
-    height: 20%;
+    width: 100%;
     border: 1px gray solid;
     border-radius: 5px;
     outline: none;
@@ -325,7 +324,9 @@ img {
 }
 
 .docselector {
-    width: 100%;
+    width: 150px;
+    margin-right: 15px;
+    display: inline-block;
 }
 
 @keyframes docselection {
