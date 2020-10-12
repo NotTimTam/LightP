@@ -31,27 +31,10 @@
     <div class="existingdocs" id="existingdocs">
         <ul class="existingdocs-list" id="existingdocs-list">
             <h3>Documents in Local Browser</h3>
+            <p>Clearing browsing data will delete these documents. Storing them here permanently is <strong>NOT</strong> a good idea.</p>
         </ul>
     </div>
 
-    <script>
-        // Startup fileload page.
-        function listFiles() {
-            list = document.getElementById("existingdocs-list");
-            locallength = localStorage.length;
-            for (let i=0; i<locallength; i++) {
-                child = document.createElement("li");
-                child.innerHTML = "📝 " + localStorage.key(i);
-                child.setAttribute("class", "existingdocs-listitem");
-                child.setAttribute("onclick", `location.href = 'editor.html#${localStorage.key(i)}'`);
-                list.appendChild(child);
-                brk = document.createElement("hr");
-                brk.setAttribute("style", "opacity: 50%; width: 95%;")
-                list.appendChild(brk);
-            }
-        }
-
-        listFiles();
-    </script>
+    <script src="scripts/listdata.js"></script>
 </body>
 </html>
