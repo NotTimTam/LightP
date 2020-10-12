@@ -76,3 +76,13 @@ function changeTitle(value) {
     document.title = formattedName + " - LightP";
     window.location.hash = "#" + formattedName;
 }
+
+// Check for file discrepencies.
+function discrepencies() {
+    fileName = document.getElementById("input-title").value;
+    if (document.getElementById("page").innerHTML != localStorage.getItem(fileName)) {
+        document.getElementById("savestatus").innerHTML = "Not Saved";
+    }
+}
+
+document.getElementById("page").addEventListener("input", discrepencies, false);
