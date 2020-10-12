@@ -252,7 +252,7 @@ img {
 }
 
 .custom-file-input::before {
-    content: 'Open';
+    content: 'Upload';
     -webkit-user-select: none;
     margin: 0px;
     padding-top: 10px;
