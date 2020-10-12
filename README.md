@@ -18,6 +18,7 @@ Is a lightweight word processor for the web.
 - Finish loading and saving different file types.
 - Update save and load to actually download data.
 - Autosaving.
+- Example files.
 
 ## Processing Perfected
 While this project is not finished, my aim from the beginning has been to create the most user friendly word processor I can. I'm slowly taking my favorite features from Microsoft Word, Google Docs, LibreOffice, Sublime Text, VSCode, Wordpad, and even Notepad, and combining them into a processor that is satisfying and easy to use! The project isn't finished, it's missing a bunch of features, and it's probably got a few bugs. But by the end, I hope it becomes something that you enjoy using.
