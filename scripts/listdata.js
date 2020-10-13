@@ -1,7 +1,7 @@
 // Delete items.
 function deleteItem(key) {
     localStorage.removeItem(key);
-    document.getElementById("existingdocs-list").innerHTML = '<h3>Documents in Local Browser</h3><p>Clearing browsing data will delete these documents. Storing them here permanently is <strong>NOT</strong> a good idea.</p>';
+    document.getElementById("existingdocs-list").innerHTML = '<h3>Documents in Local Browser</h3><p>Clearing browsing data will delete these documents. Storing them here permanently is <strong>NOT</strong> a good idea. Double click the "trash" icons to delete files from the browser.</p>';
 }
 
 // Startup fileload page.
@@ -20,7 +20,7 @@ function listFiles() {
         let child2 = document.createElement("input");
         child2.setAttribute("type", "image");
         child2.setAttribute("class", "tool-button image-button");
-        child2.setAttribute("onclick", `deleteItem("${localStorage.key(i)}"); listFiles();`);
+        child2.setAttribute("ondblclick", `deleteItem("${localStorage.key(i)}"); listFiles();`);
         child2.setAttribute("src", "images/trash.png");
         child2.setAttribute("title", "Delete this document");
         child2.setAttribute("style", "border-radius: 2em; float: right;");
