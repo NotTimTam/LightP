@@ -337,14 +337,17 @@ img {
 }
 
 .docselector:hover {
-    transform: rotateX(25deg)
+    transform: rotateX(25deg);
+
 }
 
 .spin-button:hover {
     transform: rotate(180deg);
+    background-color: red;
 }
 .spin-button {
-    transition: transform 1s;
+    transition-property: transform background-color;
+    transition-duration: 1s;
 }
 
 .existingdocs-list {
