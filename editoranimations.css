@@ -9,6 +9,16 @@
     border-radius: 1em;
 }
 
+.dropdown-button {
+    transition-property: background border-radius;
+    transition-duration: 0.5s;
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+}
+
+
 .text-button {
     transition-property: background border-radius;
     transition-duration: 0.5s;
