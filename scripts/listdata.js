@@ -23,7 +23,7 @@ function listFiles() {
         child2.setAttribute("ondblclick", `deleteItem("${localStorage.key(i)}"); listFiles();`);
         child2.setAttribute("src", "images/trash.png");
         child2.setAttribute("title", "Delete this document");
-        child2.setAttribute("style", "border-radius: 2em; float: right;");
+        child2.setAttribute("style", "float: right;");
         list.appendChild(child2);
         // Add line break.
         let brk = document.createElement("hr");

@@ -11,7 +11,7 @@
 
 .dropdown-button {
     transition-property: background border-radius background-size;
-    background: white;
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
     background-size: 0px 100%;
     background-repeat: no-repeat;
     transition-duration: 0.2s;

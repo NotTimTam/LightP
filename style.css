@@ -306,15 +306,20 @@ img {
     border: 1px gray solid;
 }
 
-.existingdocs-listitem:hover {
-    transform: scale(1.05);
-    background-color: #94bdff;
+.existingdocs-listitem {
+    transition-property: background background-size background-repeat;
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    transition-duration: 0.5s;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
     border-radius: 2em;
 }
 
-.existingdocs-listitem {
-    transition-property: transform background-color;
-    transition-duration: 0.5s;
+.existingdocs-listitem:hover {
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 2em;
 }
 
 .docselector {
@@ -331,11 +336,18 @@ img {
 
 .spin-button:hover {
     transform: rotate(180deg);
-    background-color: red;
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 3em;
 }
 .spin-button {
-    transition-property: transform background-color;
+    transition-property: transform background background-size border-radius;
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background-repeat: no-repeat;
     transition-duration: 1s;
+    background-size: 100% 0%;
+    border-radius: 0.3em;
 }
 
 .existingdocs-list {
