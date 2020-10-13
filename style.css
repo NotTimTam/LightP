@@ -325,7 +325,8 @@ img {
 }
 
 .existingdocs-listitem {
-    transition: transform 0.5s;
+    transition-property: transform background-color;
+    transition-duration: 0.5s;
 }
 
 .docselector {
