@@ -1,0 +1,29 @@
+.image-button {
+    transition-property: transform background border-radius;
+    transition-duration: 0.5s;
+}
+
+.image-button:hover {
+    transform: translateY(2px);
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    border-radius: 1em;
+}
+
+.text-button {
+    transition-property: background border-radius;
+    transition-duration: 0.5s;
+}
+
+.text-button:hover {
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    border-radius: 3em;
+}
+
+.page {
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+}
+
+.page:focus {
+    box-shadow: 1px 1px 10px black;
+}
