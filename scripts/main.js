@@ -230,6 +230,9 @@ window.onload = function(){
         } else if (hash == "resume") {
             document.getElementById("page").innerHTML = resumecontent;
             createSaveFile();
+        } else if (hash == "letter") {
+            document.getElementById("page").innerHTML = lettercontent;
+            createSaveFile();
         } else {
             console.log("Not an empty window. Loading files...")
             convertedHash = hash.replaceAll("%20", " ");
