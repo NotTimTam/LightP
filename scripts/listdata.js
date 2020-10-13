@@ -19,7 +19,7 @@ function listFiles() {
         // Add delete button.
         let child2 = document.createElement("input");
         child2.setAttribute("type", "image");
-        child2.setAttribute("class", "tool-button image-button");
+        child2.setAttribute("class", "tool-button image-button spin-button");
         child2.setAttribute("ondblclick", `deleteItem("${localStorage.key(i)}"); listFiles();`);
         child2.setAttribute("src", "images/trash.png");
         child2.setAttribute("title", "Delete this document");

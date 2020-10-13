@@ -335,6 +335,12 @@ img {
     margin-right: 15px;
     display: inline-block;
 }
+.spin-button:hover {
+    transform: rotate(180deg);
+}
+.spin-button {
+    transition: transform 1s;
+}
 
 @keyframes docselection {
     0% { 
