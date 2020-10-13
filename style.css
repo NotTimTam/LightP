@@ -323,6 +323,11 @@ img {
     animation-duration: 1s;
 }
 
+.existingdocs-listitem:hover {
+    animation-name: exdocselection;
+    animation-duration: 1s;
+}
+
 .docselector {
     width: 150px;
     margin-right: 15px;
@@ -333,6 +338,12 @@ img {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
     100% { transform: translateY(0px); }
+}
+
+@keyframes exdocselection {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .existingdocs-list {
