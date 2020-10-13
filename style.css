@@ -326,6 +326,8 @@ img {
 .existingdocs-listitem:hover {
     animation-name: exdocselection;
     animation-duration: 1s;
+    background-color: #94bdff;
+    border-radius: 2em;
 }
 
 .docselector {
@@ -358,9 +360,5 @@ img {
     padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.existingdocs-listitem:hover {
-    background-color: #94bdff;
-    border-radius: 2em;
+    cursor: pointer;
 }
