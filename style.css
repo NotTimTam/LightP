@@ -261,18 +261,6 @@ img {
     text-align: left;
 }
 
-.dropdown-button {
-    background: none;
-}
-
-.dropdown-button:hover {
-    background: lightgray;
-}
-
-.dropdown-button:focus {
-    background: #75aaff5b;
-}
-
 .blue-button {
     background: #1363e2;
     border: none;
