@@ -365,3 +365,23 @@ img {
     padding-bottom: 10px;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background-repeat: no-repeat;
+    background-size: 0px 5px;
+    transition-property: transform background-color background-size;
+    transition-duration: 0.5s;
+    background-position-y: 100%;
+    background-position-y: calc(100% + 1px);
+}
+
+a:hover {
+    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background-size: 97% 5px;
+    background-repeat: no-repeat;
+    background-position-y: calc(100% + 1px);
+}
