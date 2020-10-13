@@ -320,7 +320,7 @@ img {
 
 .docselector:hover {
     animation-name: docselection;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 
 .existingdocs-listitem:hover {
@@ -337,9 +337,15 @@ img {
 }
 
 @keyframes docselection {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0px); }
+    0% { 
+        transform: rotateX(0deg);
+    }
+    50% { 
+        transform: rotateX(25deg);
+    }
+    100% { 
+        transform: rotateX(0deg);
+    }
 }
 
 @keyframes exdocselection {
