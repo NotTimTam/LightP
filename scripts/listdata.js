@@ -11,7 +11,7 @@ function listFiles() {
     for (let i=0; i<locallength; i++) {
         // Add open button.
         let child = document.createElement("li");
-        child.innerHTML = "📝 " + localStorage.key(i);
+        child.innerHTML = "📄 " + localStorage.key(i);
         child.setAttribute("class", "existingdocs-listitem");
         child.setAttribute("onclick", `location.href = 'editor.html#${localStorage.key(i)}'`);
         child.setAttribute("style", "min-width: 90%; max-width: 93%; float: left;");
