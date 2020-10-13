@@ -227,6 +227,9 @@ window.onload = function(){
         } else if (hash == "essay") {
             document.getElementById("page").innerHTML = essaycontent;
             createSaveFile();
+        } else if (hash == "resume") {
+            document.getElementById("page").innerHTML = resumecontent;
+            createSaveFile();
         } else {
             console.log("Not an empty window. Loading files...")
             convertedHash = hash.replaceAll("%20", " ");
