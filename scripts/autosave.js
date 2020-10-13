@@ -68,10 +68,15 @@ function changeTitle(value) {
         formattedName = `Untitled Document`
     }
     
+    if (formattedName in localStorage) {
+        console.log("A file of that name already exists");
+        formattedName = mostRecentFile();
+        document.getElementById("input-title").value = formattedName;
+    }
     oldKey = document.getElementById("input-title").oldvalue;
     newData = localStorage.getItem(oldKey);
     localStorage.removeItem(oldKey);
-    localStorage.setItem(formattedName, newData)
+    localStorage.setItem(formattedName, newData);
 
     document.title = formattedName + " - LightP";
     window.location.hash = "#" + formattedName;
