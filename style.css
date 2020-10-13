@@ -320,7 +320,7 @@ img {
 
 .docselector:hover {
     animation-name: docselection;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
 }
 
 .existingdocs-listitem:hover {
