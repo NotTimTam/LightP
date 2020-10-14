@@ -292,7 +292,7 @@ img {
 }
 
 .docselector-image {
-    transition-property: border border-image-source border-image-slice;
+    transition-property: border transform border-image-source border-image-slice;
     transition-duration: 0.5s;
     width: 100%;
     border: 1px gray solid;
@@ -307,7 +307,7 @@ img {
 }
 
 .docselector-image:active {
-    border: 1px gray solid;
+    transform: rotateY(180deg);
 }
 
 .existingdocs-listitem {
