@@ -91,3 +91,7 @@ function discrepencies() {
 }
 
 document.getElementById("page").addEventListener("input", discrepencies, false);
+
+window.onbeforeunload = function(e) {
+    checkToSave();
+}
