@@ -138,7 +138,8 @@ img {
     font-family: sans-serif;
     margin-left: 20px;
     margin-top: 10px;
-    width: fit-content;
+    min-width: fit-content;
+    max-width: 100%;
     border-radius: 2px;
     border: 1px white solid;
 }
