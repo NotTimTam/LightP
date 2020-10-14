@@ -342,16 +342,15 @@ img {
     transform: rotate(180deg);
     background: red;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
     border-radius: 3em;
 }
 .spin-button {
-    transition-property: transform background background-size border-radius;
+    transition-property: transform background;
     background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-repeat: no-repeat;
+    background-size: 0% 0%;
     transition-duration: 1s;
-    background-size: 100% 0%;
-    border-radius: 0.3em;
+    border-radius: 3em;
 }
 
 .existingdocs-list {
