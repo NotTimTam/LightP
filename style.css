@@ -292,6 +292,8 @@ img {
 }
 
 .docselector-image {
+    transition-property: border border-image-source border-image-slice;
+    transition-duration: 0.5s;
     width: 100%;
     border: 1px gray solid;
     border-radius: 5px;
@@ -299,7 +301,9 @@ img {
 }
 
 .docselector-image:hover {
-    border: 1px #4285F4 solid;
+    border: 1px solid;
+    border-image-source: linear-gradient(45deg, #ff7300, #ff00c8);
+    border-image-slice: 1;
 }
 
 .docselector-image:active {
@@ -307,12 +311,12 @@ img {
 }
 
 .existingdocs-listitem {
-    transition-property: background background-size background-repeat;
+    transition-property: background background-size background-repeat border-radius;
     background: linear-gradient(45deg, #ff7300, #ff00c8);
     transition-duration: 0.5s;
     background-repeat: no-repeat;
     background-size: 0% 100%;
-    border-radius: 2em;
+    border-radius: 0em;
 }
 
 .existingdocs-listitem:hover {
