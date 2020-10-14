@@ -189,7 +189,7 @@ img {
 }
 
 .nav-button:focus {
-    background: #75aaff5b;
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
 }
 
 .dialogue {
