@@ -149,7 +149,9 @@ img {
 }
 
 .title:focus {
-    border: 2px #4285F4 solid;
+    border: 1px solid;
+    border-image-source: linear-gradient(45deg, #ff00c8, #ff7300);
+    border-image-slice: 1;
     margin-bottom: -2px;
 }
 
