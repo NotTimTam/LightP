@@ -340,7 +340,7 @@ img {
 
 .spin-button:hover {
     transform: rotate(180deg);
-    background: linear-gradient(45deg, #ff00c8, #ff7300);
+    background: red;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 3em;
