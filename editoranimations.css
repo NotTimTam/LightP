@@ -5,20 +5,20 @@
 
 .image-button:hover {
     transform: translateY(2px);
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     border-radius: 1em;
 }
 
 .dropdown-button {
     transition-property: background border-radius background-size;
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-size: 0px 100%;
     background-repeat: no-repeat;
     transition-duration: 0.2s;
 }
 
 .dropdown-button:hover {
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -30,7 +30,7 @@
 }
 
 .text-button:hover {
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     border-radius: 3em;
 }
 

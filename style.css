@@ -302,7 +302,7 @@ img {
 
 .docselector-image:hover {
     border: 1px solid;
-    border-image-source: linear-gradient(45deg, #ff7300, #ff00c8);
+    border-image-source: linear-gradient(45deg, #ff00c8, #ff7300);
     border-image-slice: 1;
 }
 
@@ -312,7 +312,7 @@ img {
 
 .existingdocs-listitem {
     transition-property: background background-size background-repeat border-radius;
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     transition-duration: 0.5s;
     background-repeat: no-repeat;
     background-size: 0% 100%;
@@ -320,7 +320,7 @@ img {
 }
 
 .existingdocs-listitem:hover {
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 2em;
@@ -340,14 +340,14 @@ img {
 
 .spin-button:hover {
     transform: rotate(180deg);
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 3em;
 }
 .spin-button {
     transition-property: transform background background-size border-radius;
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-repeat: no-repeat;
     transition-duration: 1s;
     background-size: 100% 0%;
@@ -374,7 +374,7 @@ a {
     text-decoration: none;
     color: black;
     font-weight: bolder;
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-repeat: no-repeat;
     background-size: 0px 5px;
     transition-property: transform background-color background-size;
@@ -384,7 +384,7 @@ a {
 }
 
 a:hover {
-    background: linear-gradient(45deg, #ff7300, #ff00c8);
+    background: linear-gradient(45deg, #ff00c8, #ff7300);
     background-size: 97% 5px;
     background-repeat: no-repeat;
     background-position-y: calc(100% + 1px);
