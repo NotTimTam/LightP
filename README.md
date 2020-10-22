@@ -4,8 +4,6 @@ Is a lightweight word processor for the web.
 ### To do:
 - Update linking and image adding to include inline functions.
 - Make menu recognize values.
-- Multiple pages.
-- Re-add email feature.
 - Margin bars.
 ### Finished:
 - Icons.
